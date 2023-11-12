@@ -7,7 +7,7 @@ import { FaTwitch } from 'react-icons/fa';
 
 const Footer = () => {
     return (
-        <footer className=' d-flex justify-content-between container bg-light '>
+        <footer className=' d-flex justify-content-between container'>
             <section>
                 <img height={50} src={logo} alt="" />
                 <h2>Toy Shop</h2>
