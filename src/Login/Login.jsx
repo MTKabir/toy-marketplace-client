@@ -4,9 +4,12 @@ import { FcGoogle } from "react-icons/fc";
 import { Link } from 'react-router-dom';
 
 const Login = () => {
+    const loginForm = (event)=>{
+        event.preventDefault();
+    }
     return (
         <div className='container w-25 mt-5 mb-5'>
-            <Form>
+            <Form onSubmit={loginForm}>
                 <Form.Text className='fw-medium fs-3 text-center'><p>Login</p></Form.Text>
                 <Form.Group className="mb-3" controlId="formBasicEmail">
                     <Form.Label>Email address</Form.Label>

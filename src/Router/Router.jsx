@@ -1,12 +1,13 @@
 import * as React from "react";
-import {
-  createBrowserRouter,
-} from "react-router-dom";
 import Layout from "../Layout/Layout";
 import Home from "../Home/Home/Home";
 import ViewDetails from "../Home/ViewDetails/ViewDetails";
 import Login from "../Login/Login";
 import Registration from "../Registration/Registration";
+
+import {
+  createBrowserRouter,
+} from "react-router-dom";
 
 const router = createBrowserRouter([
   {
