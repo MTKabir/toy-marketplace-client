@@ -1,25 +1,27 @@
 import React, { useContext } from 'react';
 import { Button, Form } from 'react-bootstrap';
 import { FcGoogle } from "react-icons/fc";
-import { Link } from 'react-router-dom';
+import { Link, useNavigate, } from "react-router-dom";
 import { UserContext } from '../AuthProvider/AuthProvider';
 
 const Login = () => {
-    const{signIn,signInWithGoogle} = useContext(UserContext);
-    const loginForm = (event)=>{
+    const { signIn, signInWithGoogle } = useContext(UserContext);
+    const navigate = useNavigate();
+    const loginForm = (event) => {
         event.preventDefault();
         const form = event.target;
         const email = form.email.value;
         const password = form.password.value;
-        signIn(email,password)
-        .then((userCredentials)=>{
-            const user = userCredentials.user;
-            form.reset();
-        })
-        .catch((error)=>{
-            console.log(error);
-        })
-       
+        signIn(email, password)
+            .then((userCredentials) => {
+                const user = userCredentials.user;
+                form.reset();
+                navigate("/");
+            })
+            .catch((error) => {
+                console.log(error);
+            })
+
     }
     return (
         <div className='container w-25 mt-5 mb-5'>
@@ -41,9 +43,11 @@ const Login = () => {
                     Don't have a account yet?
                     <Link to="/registration" className='text-decoration-none'>Register</Link>
                 </Form.Text>
-                <br/>
+                <br />
                 <Form.Text className='text-center mt-2'><p>Or</p></Form.Text>
-                <Button className='bg-white w-100 mt-2 border' onClick={signInWithGoogle}><FcGoogle className='fs-4'></FcGoogle></Button>
+                <Link to="/">
+                    <Button className='bg-white w-100 mt-2 border' onClick={signInWithGoogle}><FcGoogle className='fs-4'></FcGoogle></Button>
+                </Link>
             </Form>
 
         </div>
