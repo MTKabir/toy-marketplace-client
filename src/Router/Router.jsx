@@ -9,6 +9,7 @@ import {
   createBrowserRouter,
 } from "react-router-dom";
 import ForgetPassword from "../ForgetPassword/ForgetPassword";
+import AllToys from "../AllToys/AllToys";
 
 const router = createBrowserRouter([
   {
@@ -32,6 +33,10 @@ const router = createBrowserRouter([
       {
         path:"/registration",
         element:<Registration></Registration>
+      },
+      {
+        path: "/alltoys",
+        element : <AllToys></AllToys>
       }
     ]
   },
