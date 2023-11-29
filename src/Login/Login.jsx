@@ -5,7 +5,7 @@ import { Link, useNavigate, } from "react-router-dom";
 import { UserContext } from '../AuthProvider/AuthProvider';
 
 const Login = () => {
-    const { signIn, signInWithGoogle } = useContext(UserContext);
+    const { signIn, signInWithGoogle,passwordResetEmailSend } = useContext(UserContext);
     const navigate = useNavigate();
     const loginForm = (event) => {
         event.preventDefault();
@@ -39,7 +39,11 @@ const Login = () => {
                 <Button variant="primary" type="submit">
                     Login
                 </Button>
-                <Form.Text className='ms-4'>
+                <Link to="/forgetpassword" className='text-decoration-none ms-2'>
+                        Forget password?
+                </Link>
+                <br/>
+                <Form.Text className='mt-2'>
                     Don't have a account yet?
                     <Link to="/registration" className='text-decoration-none'>Register</Link>
                 </Form.Text>

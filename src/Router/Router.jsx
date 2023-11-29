@@ -8,6 +8,7 @@ import Registration from "../Registration/Registration";
 import {
   createBrowserRouter,
 } from "react-router-dom";
+import ForgetPassword from "../ForgetPassword/ForgetPassword";
 
 const router = createBrowserRouter([
   {
@@ -33,6 +34,10 @@ const router = createBrowserRouter([
         element:<Registration></Registration>
       }
     ]
+  },
+  {
+    path:"/forgetpassword",
+    element:<ForgetPassword></ForgetPassword>
   }
 ]);
 export default router;
