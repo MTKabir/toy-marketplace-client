@@ -25,7 +25,7 @@ const Header = () => {
                         user ?
                             <div>
                                 <Link onClick={userSignOut} className="text-decoration-none me-2 text-black"  to="/">Logout</Link>
-                                <img className='rounded-circle bg-secondary ' src={user.photoURL} alt="url" />
+                                <img className='rounded-circle bg-secondary' style={{width:'30px', height:'30px'}} src={user.photoURL} alt="url" />
                             </div>
                             :
                             <Link className="text-decoration-none me-2 text-black" to="/login">Login</Link>

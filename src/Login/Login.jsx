@@ -5,7 +5,7 @@ import { Link } from 'react-router-dom';
 import { UserContext } from '../AuthProvider/AuthProvider';
 
 const Login = () => {
-    const{signIn} = useContext(UserContext);
+    const{signIn,signInWithGoogle} = useContext(UserContext);
     const loginForm = (event)=>{
         event.preventDefault();
         const form = event.target;
@@ -43,7 +43,7 @@ const Login = () => {
                 </Form.Text>
                 <br/>
                 <Form.Text className='text-center mt-2'><p>Or</p></Form.Text>
-                <Button className='bg-white w-100 mt-2 border'><FcGoogle className='fs-4'></FcGoogle></Button>
+                <Button className='bg-white w-100 mt-2 border' onClick={signInWithGoogle}><FcGoogle className='fs-4'></FcGoogle></Button>
             </Form>
 
         </div>
